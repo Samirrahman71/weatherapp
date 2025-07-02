@@ -27,7 +27,6 @@ This is a **weather app** that shows you the current weather for any city in the
 
 🌐 **Try it now:** [Weather App](https://gilded-bublanina-7a08f3.netlify.app/)
 
-## For Software Engineers
 
 ### Technical Overview
 - **Frontend:** Vanilla JavaScript (ES6+), HTML5, CSS3
@@ -135,6 +134,3 @@ const data = await response.json();
 
 MIT License - Feel free to use this code for learning or personal projects.
 
----
-
-*Built as a college project to demonstrate modern web development skills including API integration, responsive design, and user experience optimization.*
