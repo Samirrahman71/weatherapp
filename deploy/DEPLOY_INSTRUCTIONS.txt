@@ -1,0 +1,22 @@
+🚀 DEPLOYMENT INSTRUCTIONS
+
+1. NETLIFY (Easiest):
+   - Go to netlify.com
+   - Drag the 'deploy' folder to Netlify
+   - Your app will be live instantly!
+
+2. VERCEL:
+   - Go to vercel.com
+   - Import your GitHub repository
+   - Deploy automatically
+
+3. GITHUB PAGES:
+   - Push to GitHub
+   - Enable Pages in repository settings
+
+🔑 IMPORTANT: Get your OpenWeatherMap API key from:
+   https://openweathermap.org/api
+
+The app will prompt you for the API key on first use.
+
+Your app is ready to deploy! 🎉

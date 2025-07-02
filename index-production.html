@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern weather application with secure backend API">
+    <meta name="author" content="Weather App Team">
+    <title>WeatherNow - Current Weather Conditions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌤️</text></svg>">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <span class="logo">🌤️</span>
+                <span class="brand-name">WeatherNow</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="hero-section">
+            <h1 class="hero-title">Check Weather Anywhere</h1>
+            <p class="hero-subtitle">Get real-time weather information for any city around the world</p>
+        </div>
+
+        <div class="weather-container">
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="cityInput" placeholder="Enter city name (e.g., New York, London, Tokyo)" autocomplete="off">
+                    <button id="searchBtn" onclick="getWeather()">
+                        <span class="btn-text">Get Weather</span>
+                        <span class="btn-icon">🔍</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="loadingSpinner" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div id="weatherResult" class="weather-result"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 WeatherNow. Built with ❤️ for weather enthusiasts.</p>
+        <p class="api-credit">Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a></p>
+    </footer>
+
+    <!-- Production version uses backend API -->
+    <script src="script-production.js"></script>
+</body>
+</html>
