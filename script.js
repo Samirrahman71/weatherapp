@@ -24,8 +24,7 @@ const CONFIG = window.APP_CONFIG || {
 // API Key handling - Use the hardcoded key from config
 let API_KEY = CONFIG.OPENWEATHER_API_KEY || localStorage.getItem(CONFIG.STORAGE_KEYS.API_KEY);
 
-// Debug: Log API key status (remove in production)
-console.log('API Key loaded:', API_KEY ? 'Yes' : 'No');
+// API key is hardcoded and ready to use
 
 // DOM Elements
 const elements = {
@@ -56,24 +55,7 @@ function initializeApp() {
     elements.cityInput.focus();
 }
 
-/**
- * Request API key from user
- */
-function requestApiKey() {
-    const key = prompt(
-        'Welcome to WeatherNow!\n\n' +
-        'To get started, you\'ll need a free API key from OpenWeatherMap.\n' +
-        'Visit: https://openweathermap.org/api\n\n' +
-        'Enter your API key below:'
-    );
-    
-    if (key && key.trim()) {
-        API_KEY = key.trim();
-        localStorage.setItem(CONFIG.STORAGE_KEYS.API_KEY, API_KEY);
-    } else {
-        showError('API key is required to fetch weather data. Please refresh and try again.');
-    }
-}
+// API key is hardcoded - no user prompt needed
 
 /**
  * Setup event listeners
@@ -106,10 +88,7 @@ async function getWeather() {
         return;
     }
     
-    if (!API_KEY) {
-        requestApiKey();
-        if (!API_KEY) return;
-    }
+    // API key is hardcoded in config - no need to prompt
     
     // Show loading state
     showLoading(true);
