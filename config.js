@@ -7,7 +7,7 @@
 // In production, this would be handled by your server/build process
 const CONFIG = {
     // OpenWeatherMap API configuration
-    OPENWEATHER_API_KEY: '', // Add your API key here for development
+    OPENWEATHER_API_KEY: '5735684190a5d1bd5c16513cbfb2d8ba', // Your OpenWeatherMap API key for development
     
     // API settings
     API_BASE_URL: 'https://api.openweathermap.org/data/2.5/weather',

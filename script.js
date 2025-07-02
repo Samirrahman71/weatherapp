@@ -12,16 +12,20 @@
  * @version 1.0.0
  */
 
-// Use configuration from config.js
+// Use configuration from config.js (loaded globally)
 const CONFIG = window.APP_CONFIG || {
     API_BASE_URL: 'https://api.openweathermap.org/data/2.5/weather',
     UNITS: 'imperial',
     TIMEOUT: 10000,
+    OPENWEATHER_API_KEY: '5735684190a5d1bd5c16513cbfb2d8ba',
     STORAGE_KEYS: { API_KEY: 'weatherApiKey' }
 };
 
-// API Key handling - Check config first, then localStorage
+// API Key handling - Use the hardcoded key from config
 let API_KEY = CONFIG.OPENWEATHER_API_KEY || localStorage.getItem(CONFIG.STORAGE_KEYS.API_KEY);
+
+// Debug: Log API key status (remove in production)
+console.log('API Key loaded:', API_KEY ? 'Yes' : 'No');
 
 // DOM Elements
 const elements = {
