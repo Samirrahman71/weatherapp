@@ -12,15 +12,16 @@
  * @version 1.0.0
  */
 
-// Configuration
-const CONFIG = {
+// Use configuration from config.js
+const CONFIG = window.APP_CONFIG || {
     API_BASE_URL: 'https://api.openweathermap.org/data/2.5/weather',
-    UNITS: 'imperial', // or 'metric' for Celsius
-    TIMEOUT: 10000 // 10 seconds
+    UNITS: 'imperial',
+    TIMEOUT: 10000,
+    STORAGE_KEYS: { API_KEY: 'weatherApiKey' }
 };
 
-// API Key handling - In production, this would be handled server-side
-let API_KEY = localStorage.getItem('weatherApiKey');
+// API Key handling - Check config first, then localStorage
+let API_KEY = CONFIG.OPENWEATHER_API_KEY || localStorage.getItem(CONFIG.STORAGE_KEYS.API_KEY);
 
 // DOM Elements
 const elements = {
@@ -64,7 +65,7 @@ function requestApiKey() {
     
     if (key && key.trim()) {
         API_KEY = key.trim();
-        localStorage.setItem('weatherApiKey', API_KEY);
+        localStorage.setItem(CONFIG.STORAGE_KEYS.API_KEY, API_KEY);
     } else {
         showError('API key is required to fetch weather data. Please refresh and try again.');
     }

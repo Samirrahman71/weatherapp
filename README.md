@@ -64,9 +64,22 @@ WeatherNow is a responsive web application that provides real-time weather infor
 2. **Get your API key**
    - Visit [OpenWeatherMap](https://openweathermap.org/api)
    - Sign up for a free account
-   - Generate your API key
+   - Generate your API key (it will look like: `a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6`)
+   - ⚠️ **Note**: You need an OpenWeatherMap API key, not an OpenAI key
 
-3. **Run the application**
+3. **Configure your API key** (Choose one method):
+   
+   **Method A: config.js (Recommended for development)**
+   ```javascript
+   // In config.js, replace the empty string:
+   OPENWEATHER_API_KEY: 'your_actual_api_key_here'
+   ```
+   
+   **Method B: Runtime input (Default)**
+   - The app will prompt you for your API key on first use
+   - Your key will be saved in browser localStorage
+
+4. **Run the application**
    ```bash
    # Option 1: Using Python
    python3 -m http.server 8000
@@ -78,7 +91,7 @@ WeatherNow is a responsive web application that provides real-time weather infor
    php -S localhost:8000
    ```
 
-4. **Open in browser**
+5. **Open in browser**
    - Navigate to `http://localhost:8000`
    - Enter your API key when prompted
    - Start searching for weather!
